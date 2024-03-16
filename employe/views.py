@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
-from polls.models import Personne
+from employe.models import Personne
 
 # Create your views here.
 def index(request):

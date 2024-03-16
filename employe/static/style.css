@@ -2,11 +2,11 @@
     margin-top: 2%;
 }
 
-th{
-    background-color: green;
+thead{
+    background-color: greenyellow;
 }
 
-td{
+tbody{
     background-color: burlywood;
 }
 form{
