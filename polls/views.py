@@ -30,10 +30,27 @@ def addEmpl(request):
 
 def show(request,id):
     
+    nom = request.POST.get('nom')
+    prenom = request.POST.get('prenom')
+    age = request.POST.get('age')
     empl=Personne.objects.get(id=id)
+    if request.method == "POST":
+        empl.nom=nom
+        empl.prenom=prenom
+        empl.age=age
+        empl.save()
+        return HttpResponseRedirect("/")
     
     return render(request, "employe/show.html",{
         'empl':empl
         })
+    
+def delete(request,id):
+    
+    empl=Personne.objects.get(id=id)
+    empl.delete()
+    return HttpResponseRedirect("/")
+    
+    
         
         
