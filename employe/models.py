@@ -17,5 +17,5 @@ class Employe(models.Model):
     
 class Anciennete(models.Model):
     employe= models.ForeignKey(Employe, on_delete=models.CASCADE)
-    duree = models.IntegerField()
+    en_cours = models.IntegerField()
     reste = models.IntegerField()
