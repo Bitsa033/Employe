@@ -1,3 +1,4 @@
+from typing import Any
 from django.db import models
 
 # Create your models here.
@@ -6,7 +7,7 @@ class Personne(models.Model):
     nom = models.CharField(max_length=50)
     prenom = models.CharField(max_length=50)
     age = models.CharField(max_length=100)
-
+    
 
 class Employe(models.Model):
     personne = models.ForeignKey(Personne, on_delete=models.CASCADE)

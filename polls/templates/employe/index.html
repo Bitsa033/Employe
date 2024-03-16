@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud width Django</title>
+    <link rel="stylesheet" href="../static/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/style.css">
+
+</head>
+
+<body>
+    <div class="row bloc_1">
+        
+        <div class="col-md-8 offset-1">
+            <a href="/addEmpl" class="btn btn-info">Nouvel employé</a><br><br>
+            <table class="table table-bordered">
+                <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Age</th>
+                    <th>Début de service</th>
+                    <th>Fin de service</th>
+                    <th>Ancienneté</th>
+                    <th>Actions</th>
+                </tr>
+                {% for x in empl %}
+                <tr>
+                    <td>{{x.nom}}</td>
+                    <td>{{x.prenom}}</td>
+                    <td>{{x.age}} Ans</td>
+                    <td>28 Septembre 1990</td>
+                    <td>28 Septembre 3009</td>
+                    <th> 14 Ans</th>
+                    <td>
+                        <a href="/?id={{x.id}}" class="btn btn-info">Consulter</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
