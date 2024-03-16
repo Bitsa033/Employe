@@ -14,6 +14,10 @@ def index(request):
     
 def addEmpl(request):
         
+    return render(request, "employe/new.html")
+
+def storeEmpl(request):
+        
     nom = request.POST.get('nom')
     prenom = request.POST.get('prenom')
     age = request.POST.get('age')
@@ -25,10 +29,16 @@ def addEmpl(request):
     
         print('La méthode de requête est : ', nom)
         return HttpResponseRedirect("/")
-        
-    return render(request, "employe/new.html")
 
-def show(request,id):
+def showEmpl(request,id):
+    
+    empl=Personne.objects.get(id=id)
+    
+    return render(request, "employe/show.html",{
+        'empl':empl
+        })
+
+def updateEmpl(request,id):
     
     nom = request.POST.get('nom')
     prenom = request.POST.get('prenom')
@@ -41,11 +51,7 @@ def show(request,id):
         empl.save()
         return HttpResponseRedirect("/")
     
-    return render(request, "employe/show.html",{
-        'empl':empl
-        })
-    
-def delete(request,id):
+def deleteEmpl(request,id):
     
     empl=Personne.objects.get(id=id)
     empl.delete()

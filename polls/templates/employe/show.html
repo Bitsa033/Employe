@@ -11,7 +11,7 @@
     <div class="row">
         <div class="col-md-6 offset-2">
             
-            <form action="/show/{{empl.id}}" method="post" autocomplete="off" class="form">
+            <form action="/updateEmpl/{{empl.id}}" method="post" autocomplete="off" class="form">
                 <h4 class="h4">Modification des informations de l'employé n°{{empl.id}} </h4>
                 {% csrf_token %}
                 <div class="form-group">
@@ -29,7 +29,7 @@
                 <div class="form-inline">
                     <a href="/" class=" col-md-3 offset-1 form-control btn btn-dark submit">Acceuil</a>
                     <input type="submit" value="Modifier" class=" col-md-3 form-control btn btn-success submit">
-                    <a href="/delete/{{empl.id}}" class=" col-md-3 form-control btn btn-danger submit">Supprimer</a>
+                    <a href="/deleteEmpl/{{empl.id}}" class=" col-md-3 form-control btn btn-danger submit">Supprimer</a>
                 </div>
                 <!--<div class="form-group">
                     Date de fin
