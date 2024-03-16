@@ -2,8 +2,13 @@
     margin-top: 2%;
 }
 
-th{background-color: green;}
-td{background-color: burlywood;}
+th{
+    background-color: green;
+}
+
+td{
+    background-color: burlywood;
+}
 form{
     border: 3px burlywood solid;
     padding: 13px;

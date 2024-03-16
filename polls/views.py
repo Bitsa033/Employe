@@ -27,5 +27,13 @@ def addEmpl(request):
         return HttpResponseRedirect("/")
         
     return render(request, "employe/new.html")
+
+def show(request,id):
+    
+    empl=Personne.objects.get(id=id)
+    
+    return render(request, "employe/show.html",{
+        'empl':empl
+        })
         
         
